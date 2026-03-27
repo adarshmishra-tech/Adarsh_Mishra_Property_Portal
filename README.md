@@ -13,6 +13,7 @@ cd Adarsh_Mishra_Property_Portal
 Navigate to the server directory and install the required packages:
 
 cd server
+
 npm install
 
 3. Start the Server
