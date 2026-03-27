@@ -1,9 +1,9 @@
 Installation & Setup (Recruiter Guide)
+
 Follow these steps to run the Property Portal locally using Node.js.
 
 1. Clone & Navigate
 Open your terminal and run:
-
 
 git clone https://github.com/adarshmishra-tech/Adarsh_Mishra_Property_Portal.git
 
@@ -17,11 +17,15 @@ cd server
 npm install
 
 3. Start the Server
+4. 
 node index.js
+
 Note: You should see: 🚀 Property Portal Server Running!
 
-4. View the Application
+6. View the Application
+7. 
 Open your browser and navigate to:
+
 http://localhost:5000
 
 🔐 Testing the Application
