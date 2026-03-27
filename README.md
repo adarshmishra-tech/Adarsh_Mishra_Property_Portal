@@ -16,9 +16,6 @@ cd server
 npm install
 
 3. Start the Server
-Run the backend. This will automatically serve the frontend as well:
-
-PowerShell
 node index.js
 Note: You should see: 🚀 Property Portal Server Running!
 
@@ -35,6 +32,7 @@ Favorites: Once registered and logged in, you can click the ⭐ Add to Favourite
 
 Security: All protected actions (like favoriting) require a JWT Token, which the server validates automatically.
 
+
 🛠️ Technical Stack
 Backend: Node.js, Express.js (v5.0+ compatible).
 
@@ -43,3 +41,5 @@ Frontend: Vanilla JavaScript (ES6+), Tailwind CSS.
 Auth: JWT (JSON Web Tokens) & LocalStorage.
 
 Data: SQLite3 for persistent storage.
+
+
