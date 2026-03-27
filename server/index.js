@@ -10,16 +10,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-/**
- * UNIVERSAL PATH LOGIC:
- * __dirname is the current folder (server).
- * '..' moves up one level to the project root.
- * 'client' moves into the frontend folder.
- * This works on YOUR computer and the RECRUITER'S computer.
- */
+// UNIVERSAL PATH: Automatically finds the client folder on any machine
 const clientPath = path.join(__dirname, '..', 'client');
 
-// 1. Serve static files (CSS, JS, images)
+// 1. Serve static files (CSS, JS, Images)
 app.use(express.static(clientPath));
 
 // 2. API Routes
@@ -27,23 +21,20 @@ app.use('/api/auth', authRouter);
 app.use('/api/properties', propertyRouter);
 
 /**
- * 3. THE FIX FOR NODE v24 / EXPRESS v5
- * This function catches any request that isn't an API call 
- * and sends the index.html file.
+ * 3. THE CATCH-ALL FIX
+ * Instead of using '*' which crashes Node v24, we use a middleware 
+ * function to serve index.html for any non-API request.
  */
 app.use((req, res, next) => {
-    // If the request starts with /api, let it pass to see if it's a 404
-    if (req.url.startsWith('/api')) {
-        return next();
-    }
-    // Otherwise, serve the frontend
+    if (req.url.startsWith('/api')) return next();
     res.sendFile(path.join(clientPath, 'index.html'));
 });
 
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`-------------------------------------------`);
-    console.log(`🚀 Server started!`);
-    console.log(`👉 Access the app at: http://localhost:${PORT}`);
+    console.log(`🚀 Property Portal Server Running!`);
+    console.log(`👉 Local URL: http://localhost:${PORT}`);
+    console.log(`📂 Serving Client from: ${clientPath}`);
     console.log(`-------------------------------------------`);
 });
