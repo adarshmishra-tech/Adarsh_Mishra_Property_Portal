@@ -4,7 +4,7 @@ Follow these steps to run the Property Portal locally using Node.js.
 1. Clone & Navigate
 Open your terminal and run:
 
-PowerShell
+
 git clone https://github.com/adarshmishra-tech/Adarsh_Mishra_Property_Portal.git
 
 cd Adarsh_Mishra_Property_Portal
@@ -12,7 +12,6 @@ cd Adarsh_Mishra_Property_Portal
 2. Install Dependencies
 Navigate to the server directory and install the required packages:
 
-PowerShell
 cd server
 npm install
 
