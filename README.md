@@ -1,85 +1,43 @@
-Property Portal - Full Stack Assessment
-A responsive, full-stack property listing application built with Node.js, Express, and SQLite3. This project demonstrates user authentication, JWT-based authorization, and persistent data storage for "favourite" properties.
+Installation & Setup (Recruiter Guide)
+Follow these steps to run the Property Portal locally using Node.js.
 
-🚀 Features
-User Authentication: Secure Register and Login flow using bcryptjs for password hashing and jsonwebtoken (JWT) for session management.
+1. Clone & Navigate
+Open your terminal and run:
 
-Property Dashboard: A dynamic grid of real estate listings fetched from a SQLite database.
-
-Persistent Favourites: Users can "Add to Favourites" or "Unfavourite" properties. These selections are stored in a relational database and persist after logout/refresh.
-
-Protected Routes: Backend middleware ensures that only authenticated users can modify their favourites.
-
-RESTful API: Clean separation between the frontend client and the backend server.
-
-🛠️ Tech Stack
-Frontend: HTML5, CSS3 (Tailwind CSS for styling), Vanilla JavaScript (Fetch API).
-
-Backend: Node.js, Express.js.
-
-Database: SQLite3 (Relational database).
-
-Security: JWT (JSON Web Tokens) and Bcrypt.
-
-📂 Project Structure
-Plaintext
-property-portal/
-├── client/                 # Frontend files
-│   ├── index.html          # Main UI
-│   └── app.js              # Frontend logic & API calls
-├── server/                 # Backend files
-│   ├── middleware/
-│   │   └── authMiddleware.js # JWT verification
-│   ├── auth.js             # Auth routes (Login/Register)
-│   ├── properties.js       # Property & Favourite routes
-│   ├── db.js               # Database schema & seeding
-│   ├── index.js            # Server entry point
-│   └── package.json        # Dependencies & scripts
-└── README.md
-
-⚙️ Installation & Setup
-Follow these steps to run the project locally on your machine:
-
-1. Prerequisites
-Ensure you have Node.js installed.
-
+PowerShell
+git clone https://github.com/adarshmishra-tech/Adarsh_Mishra_Property_Portal.git
+cd Adarsh_Mishra_Property_Portal
 2. Install Dependencies
-Navigate to the server directory and install the necessary packages:
+Navigate to the server directory and install the required packages:
 
-Bash
+PowerShell
 cd server
 npm install
 3. Start the Server
-Run the development server using nodemon:
+Run the backend. This will automatically serve the frontend as well:
 
-Bash
-npm run dev
-The server will start on http://localhost:5000. The database (database.sqlite) will be automatically created and seeded with sample properties and high-quality images.
+PowerShell
+node index.js
+Note: You should see: 🚀 Property Portal Server Running!
 
-4. Open the Client
-Since the frontend is built with Vanilla JS, simply open the client/index.html file in any modern web browser.
+4. View the Application
+Open your browser and navigate to:
+http://localhost:5000
 
-Note: If you are using WSL, navigate to the folder in Windows Explorer and double-click the file.
+🔐 Testing the Application
+Registration: If you don't have an account, click "Don't have an account? Register" on the login screen.
 
-🔑 Test Credentials
-You can register a new account through the UI, or use the pre-seeded credentials:
+Database: The app uses a self-contained SQLite database (database.sqlite). No external database setup or "Migrations" are required.
 
-Email: test@example.com
+Favorites: Once registered and logged in, you can click the ⭐ Add to Favourites button to save properties to your profile.
 
-Password: password123
+Security: All protected actions (like favoriting) require a JWT Token, which the server validates automatically.
 
-🧠 Implementation Details
-The "Favourite" Logic
-The application uses a Many-to-Many relationship between Users and Properties via a favorites join table. When a user clicks the favourite button:
+🛠️ Technical Stack
+Backend: Node.js, Express.js (v5.0+ compatible).
 
-The frontend sends a POST (to add) or DELETE (to remove) request to the server.
+Frontend: Vanilla JavaScript (ES6+), Tailwind CSS.
 
-The authMiddleware verifies the JWT in the Authorization header to identify the user.
+Auth: JWT (JSON Web Tokens) & LocalStorage.
 
-The server updates the SQLite database and returns a success message.
-
-The UI re-fetches the properties to reflect the updated state.
-
-Author: Adarsh Mishra
-
-Date: March 2026
+Data: SQLite3 for persistent storage.
