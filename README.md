@@ -6,13 +6,16 @@ Open your terminal and run:
 
 PowerShell
 git clone https://github.com/adarshmishra-tech/Adarsh_Mishra_Property_Portal.git
+
 cd Adarsh_Mishra_Property_Portal
+
 2. Install Dependencies
 Navigate to the server directory and install the required packages:
 
 PowerShell
 cd server
 npm install
+
 3. Start the Server
 Run the backend. This will automatically serve the frontend as well:
 
