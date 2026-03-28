@@ -67,7 +67,7 @@ http://localhost:5000
 
 Registration: Click “Don’t have an account? Register” on the login screen.
 Database: Uses self-contained database.sqlite; no external database setup required.
-Favorites: Click ⭐ Add to Favourites to save properties to your profile.
+Favorites: Click  Add to Favourites to save properties to your profile.
 Security: Protected actions require a JWT token, validated automatically.
 🛠️ Technical Stack
 Backend: Node.js, Express.js (v5.0+ compatible)
